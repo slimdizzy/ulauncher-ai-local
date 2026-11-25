@@ -1,0 +1,72 @@
+{
+  "required_api_version": "^2.0.0",
+  "name": "Local AI Assistant",
+  "description": "Ask questions and get synonyms from any OpenAI-compatible server (llama-server, llama-swap, vLLM, LM Studio, Ollama, OpenAI)",
+  "developer_name": "Fork of laercioskt/ulauncher-ai",
+  "icon": "images/icon.svg",
+  "options": {
+    "query_debounce": 1.5
+  },
+  "preferences": [
+    {
+      "id": "ai_kw",
+      "type": "keyword",
+      "name": "AI Question",
+      "description": "Ask any question to the configured AI server",
+      "default_value": "ai"
+    },
+    {
+      "id": "syn_kw",
+      "type": "keyword",
+      "name": "Synonyms",
+      "description": "Find synonyms for a word",
+      "default_value": "syn"
+    },
+    {
+      "id": "server_url",
+      "type": "input",
+      "name": "Server URL",
+      "description": "Any OpenAI-compatible base URL. /v1 is added automatically if missing.",
+      "default_value": "http://localhost:8080/v1"
+    },
+    {
+      "id": "model",
+      "type": "input",
+      "name": "Model",
+      "description": "Model id to request. On llama-swap this is the swap key. Leave blank to let the server pick.",
+      "default_value": "qwen3.6-35b-a3b"
+    },
+    {
+      "id": "api_key",
+      "type": "input",
+      "name": "API Key (optional)",
+      "description": "Only needed for servers that check it. Local llama-server does not.",
+      "default_value": ""
+    },
+    {
+      "id": "disable_thinking",
+      "type": "select",
+      "name": "Disable model thinking",
+      "description": "Send enable_thinking=false so reasoning models (Qwen3 etc.) answer instead of returning an empty string.",
+      "default_value": "true",
+      "options": [
+        { "value": "true", "text": "On (recommended for Qwen3)" },
+        { "value": "false", "text": "Off" }
+      ]
+    },
+    {
+      "id": "timeout",
+      "type": "input",
+      "name": "Timeout (seconds)",
+      "description": "Cold model loads on llama-swap can take a minute. Default 120.",
+      "default_value": "120"
+    },
+    {
+      "id": "max_results",
+      "type": "input",
+      "name": "Max Results",
+      "description": "Maximum number of items to display",
+      "default_value": "5"
+    }
+  ]
+}
