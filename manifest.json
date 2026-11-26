@@ -5,7 +5,7 @@
   "developer_name": "Fork of laercioskt/ulauncher-ai",
   "icon": "images/icon.svg",
   "options": {
-    "query_debounce": 1.5
+    "query_debounce": 0.8
   },
   "preferences": [
     {
